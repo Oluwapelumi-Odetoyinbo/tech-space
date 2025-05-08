@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tech Space - Premiere</title>
+  <meta name="description" content="Join Tech || !Tech's Twitter Space Premiere – Meet devs, designers, and dreamers proving your skill is always valid." />
+  <title>Tech || !Tech - Premiere</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     @keyframes fadeInUp {
@@ -25,16 +27,50 @@
 
     body {
       transition: background-color 2s ease-in-out, color 1s ease;
+      overflow: hidden;
+    }
+
+    #stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: transparent url('https://raw.githubusercontent.com/KenanY/kenany.github.io/master/images/stars.gif') repeat;
+      z-index: -1;
+      animation: moveStars 100s linear infinite;
+    }
+
+    @keyframes moveStars {
+      0% { background-position: 0 0; }
+      100% { background-position: -10000px 5000px; }
     }
   </style>
 </head>
 <body class="bg-gradient-to-b from-gray-900 to-black text-white min-h-screen flex flex-col items-center justify-center p-6">
 
+  <div id="stars"></div>
+
   <!-- Background Music -->
-  <audio autoplay loop hidden>
-    <source src="Mission-Impossible.mp3" type="audio/mp3">
+  <audio autoplay loop hidden id="bg-music">
+    <source src="background-music.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+
+  <!-- Toggle Music Button -->
+  <div class="absolute top-4 right-4">
+    <button onclick="toggleAudio()" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded">
+      Toggle Music
+    </button>
+  </div>
+
+  <script>
+    const audio = document.getElementById("bg-music");
+    function toggleAudio() {
+      if (audio.paused) audio.play();
+      else audio.pause();
+    }
+  </script>
 
   <h1 class="text-4xl md:text-5xl font-bold text-center mb-10 fade-in-up">Tech or Not, Your Skill is Valid.</h1>
 
@@ -42,29 +78,29 @@
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-6xl">
     <!-- Helen -->
-    <div class="bg-gray-800 rounded-xl p-4 card-appear text-center">
-      <img src="helen.png" alt="Helen" class="rounded-full w-32 h-32 mx-auto object-cover mb-4">
+    <div class="bg-gray-800 hover:bg-gray-700 transition duration-300 rounded-xl p-4 card-appear text-center">
+      <img src="helen.png" alt="Helen" loading="lazy" class="rounded-full w-32 h-32 mx-auto object-cover mb-4">
       <h2 class="text-lg font-bold">@_devHelen</h2>
       <p class="text-sm text-gray-400">Frontend Developer</p>
       <p class="mt-2 text-green-400 font-semibold">Host</p>
     </div>
     <!-- DevJNS -->
-    <div class="bg-gray-800 rounded-xl p-4 card-appear text-center">
-      <img src="jns.png" alt="DevJNS" class="rounded-full w-32 h-32 mx-auto object-cover mb-4">
+    <div class="bg-gray-800 hover:bg-gray-700 transition duration-300 rounded-xl p-4 card-appear text-center">
+      <img src="devjns.png" alt="DevJNS" loading="lazy" class="rounded-full w-32 h-32 mx-auto object-cover mb-4">
       <h2 class="text-lg font-bold">@_devJNS</h2>
       <p class="text-sm text-gray-400">Software Engineer</p>
       <p class="mt-2 text-yellow-400 font-semibold">Co-Host</p>
     </div>
     <!-- Tosin -->
-    <div class="bg-gray-800 rounded-xl p-4 card-appear text-center">
-      <img src="tosin.png" alt="Tosin" class="rounded-full w-32 h-32 mx-auto object-cover mb-4">
+    <div class="bg-gray-800 hover:bg-gray-700 transition duration-300 rounded-xl p-4 card-appear text-center">
+      <img src="tosin.png" alt="Tosin" loading="lazy" class="rounded-full w-32 h-32 mx-auto object-cover mb-4">
       <h2 class="text-lg font-bold">@TosinOlugbenga</h2>
       <p class="text-sm text-gray-400">Software Engineer</p>
       <p class="mt-2 text-blue-400 font-semibold">Speaker</p>
     </div>
     <!-- Eche_codes -->
-    <div class="bg-gray-800 rounded-xl p-4 card-appear text-center">
-      <img src="eches.png" alt="Eche" class="rounded-full w-32 h-32 mx-auto object-cover mb-4">
+    <div class="bg-gray-800 hover:bg-gray-700 transition duration-300 rounded-xl p-4 card-appear text-center">
+      <img src="eche.png" alt="Eche" loading="lazy" class="rounded-full w-32 h-32 mx-auto object-cover mb-4">
       <h2 class="text-lg font-bold">@Eche_codes</h2>
       <p class="text-sm text-gray-400">Web2/Web3 dev</p>
       <p class="mt-2 text-purple-400 font-semibold">Speaker</p>
@@ -73,7 +109,14 @@
 
   <div class="mt-16 text-center fade-in-up">
     <p class="text-lg">📍 Twitter Space</p>
-    <p class="text-2xl font-bold">May 8th | 8PM WAT</p>
+    <p class="text-2xl font-bold">May 8th | 7PM WAT</p>
+
+    <!-- Reminder Button -->
+    <a href="https://twitter.com/i/spaces/1ypJdgbWZQlxW" target="_blank" rel="noopener noreferrer">
+      <button class="mt-4 bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-full text-sm font-semibold transition">
+        🔔 Set Reminder
+      </button>
+    </a>
   </div>
 
   <div class="mt-20 fade-in-up text-sm text-gray-500">Team: Tech || !Tech</div>
