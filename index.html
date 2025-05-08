@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Space - Premiere</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up {
+      animation: fadeInUp 1s ease forwards;
+    }
+    .card-appear {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .card-appear:nth-child(1) { animation-delay: 0.5s; }
+    .card-appear:nth-child(2) { animation-delay: 1s; }
+    .card-appear:nth-child(3) { animation-delay: 1.5s; }
+    .card-appear:nth-child(4) { animation-delay: 2s; }
+
+    body {
+      transition: background-color 2s ease-in-out, color 1s ease;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-900 to-black text-white min-h-screen flex flex-col items-center justify-center p-6">
+
+  <!-- Background Music -->
+  <audio autoplay loop hidden>
+    <source src="Mission-Impossible.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <h1 class="text-4xl md:text-5xl font-bold text-center mb-10 fade-in-up">Tech or Not, Your Skill is Valid.</h1>
+
+  <div class="text-xl font-semibold mb-4 fade-in-up">🎥 Meet the Cast</div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-6xl">
+    <!-- Helen -->
+    <div class="bg-gray-800 rounded-xl p-4 card-appear text-center">
+      <img src="helen.png" alt="Helen" class="rounded-full w-32 h-32 mx-auto object-cover mb-4">
+      <h2 class="text-lg font-bold">@_devHelen</h2>
+      <p class="text-sm text-gray-400">Frontend Developer</p>
+      <p class="mt-2 text-green-400 font-semibold">Host</p>
+    </div>
+    <!-- DevJNS -->
+    <div class="bg-gray-800 rounded-xl p-4 card-appear text-center">
+      <img src="jns.png" alt="DevJNS" class="rounded-full w-32 h-32 mx-auto object-cover mb-4">
+      <h2 class="text-lg font-bold">@_devJNS</h2>
+      <p class="text-sm text-gray-400">Software Engineer</p>
+      <p class="mt-2 text-yellow-400 font-semibold">Co-Host</p>
+    </div>
+    <!-- Tosin -->
+    <div class="bg-gray-800 rounded-xl p-4 card-appear text-center">
+      <img src="tosin.png" alt="Tosin" class="rounded-full w-32 h-32 mx-auto object-cover mb-4">
+      <h2 class="text-lg font-bold">@TosinOlugbenga</h2>
+      <p class="text-sm text-gray-400">Software Engineer</p>
+      <p class="mt-2 text-blue-400 font-semibold">Speaker</p>
+    </div>
+    <!-- Eche_codes -->
+    <div class="bg-gray-800 rounded-xl p-4 card-appear text-center">
+      <img src="eches.png" alt="Eche" class="rounded-full w-32 h-32 mx-auto object-cover mb-4">
+      <h2 class="text-lg font-bold">@Eche_codes</h2>
+      <p class="text-sm text-gray-400">Web2/Web3 dev</p>
+      <p class="mt-2 text-purple-400 font-semibold">Speaker</p>
+    </div>
+  </div>
+
+  <div class="mt-16 text-center fade-in-up">
+    <p class="text-lg">📍 Twitter Space</p>
+    <p class="text-2xl font-bold">May 8th | 8PM WAT</p>
+  </div>
+
+  <div class="mt-20 fade-in-up text-sm text-gray-500">Team: Tech || !Tech</div>
+</body>
+</html>
